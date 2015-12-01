@@ -15,7 +15,8 @@
 
 @dynamic beds;
 @dynamic rate;
-@dynamic hotel;
+@dynamic number;
 @dynamic reservation;
+@dynamic hotel;
 
 @end

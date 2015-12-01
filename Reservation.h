@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Room;
+@class Guest, Room;
 
 NS_ASSUME_NONNULL_BEGIN
 

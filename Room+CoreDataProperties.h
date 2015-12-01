@@ -17,17 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSNumber *beds;
 @property (nullable, nonatomic, retain) NSNumber *rate;
-@property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *hotel;
-@property (nullable, nonatomic, retain) NSManagedObject *reservation;
-
-@end
-
-@interface Room (CoreDataGeneratedAccessors)
-
-- (void)addHotelObject:(NSManagedObject *)value;
-- (void)removeHotelObject:(NSManagedObject *)value;
-- (void)addHotel:(NSSet<NSManagedObject *> *)values;
-- (void)removeHotel:(NSSet<NSManagedObject *> *)values;
+@property (nullable, nonatomic, retain) NSNumber *number;
+@property (nullable, nonatomic, retain) Reservation *reservation;
+@property (nullable, nonatomic, retain) Hotel *hotel;
 
 @end
 

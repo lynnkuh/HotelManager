@@ -1,31 +1,56 @@
 //
-//  RoomsViewController.m
+//  HotelsViewController.m
 //  HotelManager
 //
 //  Created by Regular User on 11/30/15.
 //  Copyright © 2015 Lynn Kuhlman. All rights reserved.
 //
 
+#import "HotelsViewController.h"
+#import "AppDelegate.h"
+#import "Hotel.h"
 #import "RoomsViewController.h"
-#import "Room.h"
 
-@interface RoomsViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@interface HotelsViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSArray *datasource;
 @property (strong, nonatomic) UITableView *tableView;
 
 
 @end
 
-@implementation RoomsViewController
+@implementation HotelsViewController
+
+
+- (NSArray *)datasource {
+    if (!_datasource) {
+        
+        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+        
+        NSManagedObjectContext *context = delegate.managedObjectContext;
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+        
+        NSError *fetchError;
+        
+        _datasource = [context executeFetchRequest:request error:&fetchError];
+        
+        if (fetchError) {
+            NSLog(@"Error fetching from Core Data.");
+        }
+        
+    }
+    
+    return _datasource;
+}
 
 - (void)loadView {
     [super loadView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupRoomsViewController];
+    [self setupHotelsViewController];
     [self setupTableView];
 }
 
@@ -33,11 +58,12 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)setupRoomsViewController {
-    [self setTitle:@"Rooms"];
+- (void)setupHotelsViewController {
+    
 }
 
 - (void)setupTableView {
+    
     self.tableView = [[UITableView alloc]init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -57,39 +83,52 @@
     bottom.active = YES;
 }
 
-#pragma mark - UITableViewDataSource
+
+#pragma mark - UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.hotel.room count];
+    return [self.datasource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    Room *room = (Room *)[self.hotel.room allObjects][indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"Room: %i (%i beds, $%0.2f per night)", room.number.intValue, room.beds.intValue, room.rate.floatValue];
+    Hotel *hotel = self.datasource[indexPath.row];
+    cell.textLabel.text = hotel.name;
     
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return  150.0;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 150.0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIImage *headerImage = [UIImage imageNamed:@"room"];
+    
+    UIImage *headerImage = [UIImage imageNamed:@"hotel"];
     UIImageView *imageView = [[UIImageView alloc]initWithImage:headerImage];
     
     imageView.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 150.0);
+    
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
-    return  imageView;
+    
+    return imageView;
+    
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Hotel *hotel = self.datasource[indexPath.row];
+    RoomsViewController *roomsViewController = [[RoomsViewController alloc]init];
+    roomsViewController.hotel = hotel;
+    
+    [self.navigationController pushViewController:roomsViewController animated:YES];
+    
+}
 @end
