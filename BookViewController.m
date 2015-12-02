@@ -24,9 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [super setupBookViewController];
-    [super setupMessageLabel];
-    [super setupNameField];
+    [self setupBookViewController];
+    [self setupMessageLabel];
+    [self setupNameField];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +79,22 @@
     [self.nameField becomeFirstResponder];
 }
 
+- (void)saveButtonSelected:(UIBarButtonItem *)sender {
+    
+    Reservation *reservation = [Reservation reservationWithStartDate:self.startDate endDate:self.endDate room:self.room];
+    self.room.reservation = reservation;
+    
+    reservation.guest = [Guest guestWithName:self.nameField.text];
+    
+    NSError *saveError;
+    [[NSManagedObjectContext managerContext] save:&saveError];
+    
+    if (saveError) {
+        NSLog(@"Save error is %@", saveError);
+    } else {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
 
 
 @end
