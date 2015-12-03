@@ -28,6 +28,8 @@
 		1A9176461C0D225100438A3E /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A91763C1C0D225100438A3E /* Guest.m */; };
 		1A9176471C0D225100438A3E /* Reservation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A91763E1C0D225100438A3E /* Reservation+CoreDataProperties.m */; };
 		1A9176481C0D225100438A3E /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9176401C0D225100438A3E /* Reservation.m */; };
+		1ACA1ACF1C0FA04400CA3963 /* LookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA1ACE1C0FA04400CA3963 /* LookupViewController.m */; };
+		1ACA1AD21C0FD2C400CA3963 /* ReservationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA1AD11C0FD2C400CA3963 /* ReservationService.m */; };
 		1AD75D7E1C0E42EC00242244 /* AvailabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD75D7D1C0E42EC00242244 /* AvailabilityViewController.m */; };
 		1AD75D811C0E4D9A00242244 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD75D801C0E4D9A00242244 /* BookViewController.m */; };
 		1AD75D871C0E591D00242244 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD75D861C0E591D00242244 /* DateViewController.m */; };
@@ -91,6 +93,10 @@
 		1A91763E1C0D225100438A3E /* Reservation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Reservation+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1A91763F1C0D225100438A3E /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
 		1A9176401C0D225100438A3E /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
+		1ACA1ACD1C0FA04400CA3963 /* LookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupViewController.h; sourceTree = "<group>"; };
+		1ACA1ACE1C0FA04400CA3963 /* LookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupViewController.m; sourceTree = "<group>"; };
+		1ACA1AD01C0FD2C400CA3963 /* ReservationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReservationService.h; path = HotelManager/ReservationService.h; sourceTree = "<group>"; };
+		1ACA1AD11C0FD2C400CA3963 /* ReservationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReservationService.m; path = HotelManager/ReservationService.m; sourceTree = "<group>"; };
 		1AD75D7C1C0E42EC00242244 /* AvailabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvailabilityViewController.h; path = ../AvailabilityViewController.h; sourceTree = "<group>"; };
 		1AD75D7D1C0E42EC00242244 /* AvailabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvailabilityViewController.m; path = ../AvailabilityViewController.m; sourceTree = "<group>"; };
 		1AD75D7F1C0E4D9A00242244 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookViewController.h; path = ../BookViewController.h; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 				1A91763D1C0D225100438A3E /* Reservation+CoreDataProperties.h */,
 				1A91763E1C0D225100438A3E /* Reservation+CoreDataProperties.m */,
 				1A91763F1C0D225100438A3E /* Reservation.h */,
+				1ACA1AD01C0FD2C400CA3963 /* ReservationService.h */,
+				1ACA1AD11C0FD2C400CA3963 /* ReservationService.m */,
 				1A9176401C0D225100438A3E /* Reservation.m */,
 			);
 			name = Model;
@@ -226,6 +234,8 @@
 				1AD75D7C1C0E42EC00242244 /* AvailabilityViewController.h */,
 				1AD75D7D1C0E42EC00242244 /* AvailabilityViewController.m */,
 				1A8349411C0CF0AE00E4722D /* ViewController.h */,
+				1ACA1ACD1C0FA04400CA3963 /* LookupViewController.h */,
+				1ACA1ACE1C0FA04400CA3963 /* LookupViewController.m */,
 				1A9176121C0D0DAB00438A3E /* RoomsViewController.h */,
 				1A9176131C0D0DAB00438A3E /* RoomsViewController.m */,
 				1A91762E1C0D1F4700438A3E /* HotelsViewController.h */,
@@ -372,6 +382,7 @@
 				1A9176441C0D225100438A3E /* Room.m in Sources */,
 				1A9176431C0D225100438A3E /* Room+CoreDataProperties.m in Sources */,
 				1A9176301C0D1F4700438A3E /* HotelsViewController.m in Sources */,
+				1ACA1ACF1C0FA04400CA3963 /* LookupViewController.m in Sources */,
 				1A9176471C0D225100438A3E /* Reservation+CoreDataProperties.m in Sources */,
 				1A8349491C0CF0AE00E4722D /* HotelManager.xcdatamodeld in Sources */,
 				1A9176411C0D225100438A3E /* Hotel+CoreDataProperties.m in Sources */,
@@ -384,6 +395,7 @@
 				1A83493D1C0CF0AE00E4722D /* main.m in Sources */,
 				1AD75D871C0E591D00242244 /* DateViewController.m in Sources */,
 				1A9176451C0D225100438A3E /* Guest+CoreDataProperties.m in Sources */,
+				1ACA1AD21C0FD2C400CA3963 /* ReservationService.m in Sources */,
 				1AD75D8D1C0E63BC00242244 /* NSObject+NSManagedObjectContext_Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

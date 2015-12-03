@@ -33,7 +33,7 @@
         AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
-        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ AND endDate >= %@", self.endDate, [NSDate date]];
+        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ AND endDate >= %@", self.startDate, self.endDate, [NSDate date]];
         
         NSArray *results = [delegate.managedObjectContext executeFetchRequest:request error:nil];
         NSMutableArray *unavailableRooms = [[NSMutableArray alloc]init];
