@@ -17,5 +17,7 @@
 @dynamic name;
 @dynamic stars;
 @dynamic room;
+@dynamic image;
+
 
 @end

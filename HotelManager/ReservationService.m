@@ -22,7 +22,7 @@
 @end
 
 @implementation ReservationService
-
+/*
 - (NSArray *)unavailableRooms:(NSDate *)startDate endDate:(NSDate *)endDate reservation:(Reservation *)reservation {
 }
 
@@ -52,5 +52,5 @@
     return _datasource;
 }
 
-
+*/
 @end

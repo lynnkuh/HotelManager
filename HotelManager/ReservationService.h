@@ -12,8 +12,9 @@
 
 @interface ReservationService : NSObject
 
-
+/*
 + (instancetype)unavailableRooms:(NSDate *)startDate endDate:(NSDate *)endDate room:(Room *)room;
+ */
 
 @end
 

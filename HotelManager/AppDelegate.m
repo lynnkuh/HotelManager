@@ -8,11 +8,12 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-
 #import "Hotel.h"
 #import "Room.h"
 #import "Reservation.h"
 #import "Guest.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -26,6 +27,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Fabric with:@[[Crashlytics class]]];
     [self setupRootViewController];
     [self bootstrapApp];
     return YES;
@@ -107,6 +109,21 @@
     
 }
 
+- (void)addImages {
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+    NSArray *hotels = [self.managedObjectContext executeFetchRequest:request error:nil];
+    UIImage *image = [UIImage imageNamed:@"image"];
+    
+    for (Hotel *hotel in hotels) {
+        hotel.image = UIImageJPEGRepresentation(image, 0.8);
+    }
+    
+    // ... Save ...
+    [self.managedObjectContext save:nil];
+    
+}
+
 
 #pragma mark - Core Data stack
 
@@ -141,7 +158,11 @@
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"HotelManager.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption : @YES,
+                              NSInferMappingModelAutomaticallyOption : @YES,
+                              NSPersistentStoreUbiquitousContainerIdentifierKey : @"HotelManager"};
+                              
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";

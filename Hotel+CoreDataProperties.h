@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *location;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSNumber *stars;
+@property (nullable, nonatomic, retain) NSNumber *image;
 @property (nullable, nonatomic, retain) NSSet<Room *> *room;
 
 @end
