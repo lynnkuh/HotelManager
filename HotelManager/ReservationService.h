@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reservation.h"
+#import "Guest.h"
+#import "NSObject+NSManagedObjectContext_Category.h"
 
 @class Room;
 
-@interface ReservationService : NSObject
+@interface ReservationService : NSManagedObject
 
-/*
-+ (instancetype)unavailableRooms:(NSDate *)startDate endDate:(NSDate *)endDate room:(Room *)room;
- */
++ (NSArray *)unavailableRooms:(NSDate *)startDate endDate:(NSDate *)endDate;
+
++ (void)createReservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Room *)room name:(NSString *) name;
 
 @end
 

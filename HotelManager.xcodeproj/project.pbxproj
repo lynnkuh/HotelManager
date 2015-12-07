@@ -11,6 +11,7 @@
 		1A48423D1C1102A800CD155B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A48423B1C1102A800CD155B /* Crashlytics.framework */; };
 		1A4842431C112FE600CD155B /* HotelManager in Resources */ = {isa = PBXBuildFile; fileRef = 1A4842421C112FE600CD155B /* HotelManager */; };
 		1A4842471C11323100CD155B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4842461C11323100CD155B /* SystemConfiguration.framework */; };
+		1A744C281C12522800CE79E5 /* Flurry in Resources */ = {isa = PBXBuildFile; fileRef = 1A744C271C12522800CE79E5 /* Flurry */; };
 		1A83493D1C0CF0AE00E4722D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83493C1C0CF0AE00E4722D /* main.m */; };
 		1A8349401C0CF0AE00E4722D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83493F1C0CF0AE00E4722D /* AppDelegate.m */; };
 		1A8349431C0CF0AE00E4722D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8349421C0CF0AE00E4722D /* ViewController.m */; };
@@ -64,6 +65,7 @@
 		1A48423F1C11224B00CD155B /* HotelManager1.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotelManager1.3.xcdatamodel; sourceTree = "<group>"; };
 		1A4842421C112FE600CD155B /* HotelManager */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HotelManager; sourceTree = "<group>"; };
 		1A4842461C11323100CD155B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1A744C271C12522800CE79E5 /* Flurry */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Flurry; sourceTree = "<group>"; };
 		1A8349381C0CF0AE00E4722D /* HotelManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A83493C1C0CF0AE00E4722D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1A83493E1C0CF0AE00E4722D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		1A83492F1C0CF0AE00E4722D = {
 			isa = PBXGroup;
 			children = (
+				1A744C271C12522800CE79E5 /* Flurry */,
 				1A4842461C11323100CD155B /* SystemConfiguration.framework */,
 				1A4842421C112FE600CD155B /* HotelManager */,
 				1A48423A1C1102A800CD155B /* Fabric.framework */,
@@ -368,6 +371,7 @@
 			files = (
 				1A9176111C0D0B0C00438A3E /* hotels.json in Resources */,
 				1A91760D1C0D0ACF00438A3E /* hotel.png in Resources */,
+				1A744C281C12522800CE79E5 /* Flurry in Resources */,
 				1A91760F1C0D0AD700438A3E /* room.png in Resources */,
 				1A4842431C112FE600CD155B /* HotelManager in Resources */,
 				1A83494E1C0CF0AE00E4722D /* LaunchScreen.storyboard in Resources */,

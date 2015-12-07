@@ -9,6 +9,7 @@
 #import "Room.h"
 #import "Hotel.h"
 #import "Reservation.h"
+#import "NSObject+NSManagedObjectContext_Category.h"
 
 @implementation Room
 
