@@ -14,7 +14,7 @@
 #import "Guest.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-
+#import "Flurry.h"
 
 
 
@@ -35,6 +35,7 @@
     [Fabric with:@[[Crashlytics class]]];
     [self setupRootViewController];
     [self bootstrapApp];
+    [Flurry startSession:@"TQ3CGNJ68JZVZFK6FC3F"];
     return YES;
 }
 
