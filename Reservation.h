@@ -15,9 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Reservation : NSManagedObject
 
++ (NSArray *)unavailableRooms:(NSDate *)startDate endDate:(NSDate *)endDate;
 
 + (instancetype)reservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Room *)room;
+
 @end
+
 
 NS_ASSUME_NONNULL_END
 
