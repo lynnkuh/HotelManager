@@ -38,7 +38,6 @@
 		1AD75D811C0E4D9A00242244 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD75D801C0E4D9A00242244 /* BookViewController.m */; };
 		1AD75D871C0E591D00242244 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD75D861C0E591D00242244 /* DateViewController.m */; };
 		1AD75D8D1C0E63BC00242244 /* NSObject+NSManagedObjectContext_Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD75D8C1C0E63BC00242244 /* NSObject+NSManagedObjectContext_Category.m */; };
-		1AF2F1A41C163E71004F9899 /* libFlurry_7.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF2F1A31C163E71004F9899 /* libFlurry_7.3.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,9 +115,6 @@
 		1AD75D861C0E591D00242244 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		1AD75D8B1C0E63BC00242244 /* NSObject+NSManagedObjectContext_Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSManagedObjectContext_Category.h"; sourceTree = "<group>"; };
 		1AD75D8C1C0E63BC00242244 /* NSObject+NSManagedObjectContext_Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSManagedObjectContext_Category.m"; sourceTree = "<group>"; };
-		1AF2F1A11C163E71004F9899 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		1AF2F1A21C163E71004F9899 /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryWatch.h; sourceTree = "<group>"; };
-		1AF2F1A31C163E71004F9899 /* libFlurry_7.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.3.0.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF2F1A41C163E71004F9899 /* libFlurry_7.3.0.a in Frameworks */,
 				1A34153D1C1639060083FCF1 /* Crashlytics.framework in Frameworks */,
 				1A4842471C11323100CD155B /* SystemConfiguration.framework in Frameworks */,
 				1A34153E1C1639060083FCF1 /* Fabric.framework in Frameworks */,
@@ -224,9 +219,6 @@
 		1A91760B1C0D06FA00438A3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1AF2F1A11C163E71004F9899 /* Flurry.h */,
-				1AF2F1A21C163E71004F9899 /* FlurryWatch.h */,
-				1AF2F1A31C163E71004F9899 /* libFlurry_7.3.0.a */,
 				1A9176311C0D225100438A3E /* Hotel+CoreDataProperties.h */,
 				1A9176321C0D225100438A3E /* Hotel+CoreDataProperties.m */,
 				1A9176331C0D225100438A3E /* Hotel.h */,
@@ -338,6 +330,7 @@
 				TargetAttributes = {
 					1A8349371C0CF0AE00E4722D = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = KWM9699ARM;
 					};
 					1A8349531C0CF0AE00E4722D = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -572,6 +565,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -586,6 +581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lynnkuhlman.HotelManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -593,6 +589,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -607,6 +605,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lynnkuhlman.HotelManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
